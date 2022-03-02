@@ -1,11 +1,8 @@
-function reddenPage() {
-  console.log("You've reach the function finally!");
-  document.body.style.backgroundColor = 'red';
-}
-
-chrome.action.onClicked.addListener(tab => {
+// confirms initialization of extension
+chrome.action.onClicked.addListener((tab) => {
+  console.log("onClicked listener is working.");
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: reddenPage
+    files: ['content.js']
   });
 });
