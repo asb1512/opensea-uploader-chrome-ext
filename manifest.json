@@ -4,15 +4,16 @@
   "name": "Opensea Mass NFT Uploader",
   "description": "This extension aids in the mass-upload of NFTs.",
   "version": "1.0",
-
   "action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-  "default_locale": "en",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
-  "contentSettings": ["<all_urls>"]
+  "background": {
+    "service_worker": "background.js"
+  }
 }
